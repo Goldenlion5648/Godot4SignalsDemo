@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://cmcemppqficr3"]
+
+[ext_resource type="Script" path="res://doorbell.gd" id="1_j5p1b"]
+[ext_resource type="Texture2D" uid="uid://bguwa1lg0bgl" path="res://red_godot.png" id="2_ksovj"]
+[ext_resource type="Script" path="res://red.gd" id="3_1inj4"]
+[ext_resource type="Texture2D" uid="uid://cc6st1m11k5vr" path="res://green_godot.png" id="4_x0mh2"]
+[ext_resource type="Script" path="res://green.gd" id="5_hc7uk"]
+[ext_resource type="Texture2D" uid="uid://cvb1tfnhimpp5" path="res://dark_blue_godot.png" id="6_63psw"]
+[ext_resource type="Script" path="res://blue.gd" id="7_jh8ww"]
+
+[node name="main" type="Node2D"]
+
+[node name="doorbell" type="Button" parent="."]
+offset_left = 311.0
+offset_top = 49.0
+offset_right = 522.0
+offset_bottom = 154.0
+theme_override_font_sizes/font_size = 40
+text = "Quiet Doorbell"
+script = ExtResource("1_j5p1b")
+loudness = 10
+
+[node name="doorbell2" type="Button" parent="."]
+offset_left = 686.0
+offset_top = 50.0
+offset_right = 897.0
+offset_bottom = 155.0
+theme_override_font_sizes/font_size = 40
+text = "Loud Doorbell"
+script = ExtResource("1_j5p1b")
+loudness = 25
+
+[node name="red" type="Sprite2D" parent="."]
+position = Vector2(152, 406)
+scale = Vector2(0.466102, 0.466102)
+texture = ExtResource("2_ksovj")
+script = ExtResource("3_1inj4")
+
+[node name="green" type="Sprite2D" parent="."]
+position = Vector2(485, 411)
+scale = Vector2(0.466102, 0.466102)
+texture = ExtResource("4_x0mh2")
+script = ExtResource("5_hc7uk")
+
+[node name="blue" type="Sprite2D" parent="."]
+position = Vector2(814, 412)
+scale = Vector2(0.466102, 0.466102)
+texture = ExtResource("6_63psw")
+script = ExtResource("7_jh8ww")
+
+[connection signal="pressed" from="doorbell" to="doorbell" method="_on_pressed"]
+[connection signal="pressed" from="doorbell2" to="doorbell2" method="_on_pressed"]
